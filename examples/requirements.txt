@@ -1,0 +1,10 @@
+Django
+Jinja2
+MarkupSafe
+Sphinx
+django-debug-toolbar
+docutils
+ipdb
+ipython
+selenium
+tox
