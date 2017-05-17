@@ -1,38 +1,45 @@
 ================
 django-nonefield
 ================
-`django-nonefield` is a None field for Django.
+``django-nonefield`` is a None field for Django.
 
 Prerequisites
 =============
-- Django 1.5, 1.6, 1.7, 1.8
-- Python 2.6.8+, 2.7, 3.3
+- Django 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11.
+- Python 2.7, 3.4, 3.5, 3.6
 
 Installation
 ============
 
-1. Install latest stable version from PyPI::
+(1) Install latest stable version from PyPI::
 
-    $ pip install django-nonefield
+    .. code-block:: sh
 
-   Or latest stable version from GitHub::
+        pip install django-nonefield
 
-    $ pip install -e git+https://github.com/barseghyanartur/django-nonefield@stable
+    Or latest stable version from GitHub::
 
-   Or latest stable version from BitBucket::
+    .. code-block:: sh
 
-    $ pip install -e hg+https://bitbucket.org/barseghyanartur/django-nonefield@stable
+        pip install https://github.com/barseghyanartur/django-nonefield/archive/stable.tar.gz
 
-2. Add `nonefield` to ``INSTALLED_APPS`` of the your projects' Django settings.
+    Or latest stable version from BitBucket::
 
-.. code-block:: python
+    .. code-block:: sh
 
-    INSTALLED_APPS = (
-        # ...
-        # None field
-        'nonefield',
-        # ...
-    )
+        pip install https://bitbucket.org/barseghyanartur/django-fobi/get/stable.tar.gz
+
+(2) Add ``nonefield`` to ``INSTALLED_APPS`` of the your projects' Django
+    settings.
+
+    .. code-block:: python
+
+        INSTALLED_APPS = (
+            # ...
+            # None field
+            'nonefield',
+            # ...
+        )
 
 Usage
 =====
@@ -44,6 +51,7 @@ forms.py
     from nonefield.fields import NoneField
 
     class MyForm(forms.Form):
+
         name = forms.CharField(max_length=255)
         some_text = NoneField(initial='Lorem ipsum')
 
@@ -59,7 +67,7 @@ GPL 2.0/LGPL 2.1
 
 Support
 =======
-For any issues contact me at the e-mail given in the `Author` section.
+For any issues contact me at the e-mail given in the `Author`_ section.
 
 Author
 ======

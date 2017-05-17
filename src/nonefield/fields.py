@@ -1,22 +1,25 @@
+from django.forms.fields import Field
+
+from .widgets import NoneWidget
+
 __title__ = 'nonefield.fields'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = 'Copyright (c) 2013-2015 Artur Barseghyan'
+__copyright__ = '2013-2015 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = ('NoneField',)
 
-from django.forms.fields import Field
-
-from nonefield.widgets import NoneWidget
 
 class NoneField(Field):
-    """
+    """NoneField.
+
     To be used with content elements like text or images, that need to be
     present, for instance, in between form input elements.
     """
     widget = NoneWidget
 
     def bound_data(self, data, initial):
-        """
+        """Bound data.
+
         Return the value that should be shown for this field on render of a
         bound form, given the submitted POST data for the field and the initial
         data, if any.
@@ -27,4 +30,8 @@ class NoneField(Field):
         return initial
 
     def validate(self, value):
+        """Validate.
+
+        Always return True (by definition).
+        """
         return True
