@@ -1,0 +1,6 @@
+[run]
+omit =
+    src/django_nonefield/south_migrations/*
+    src/django_nonefield/tests/*
+    example/simple/settings/*
+    example/simple/wsgi.py
