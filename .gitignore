@@ -8,6 +8,9 @@
 /.idea/
 /.pytest_cache/
 /.coverage
+*.py,cover
+/.cache/
+/htmlcov/
 
 MANIFEST.in~
 tmp/

@@ -35,3 +35,6 @@ class NoneField(Field):
         Always return True (by definition).
         """
         return True
+
+    def clean(self, value):
+        return self.initial
