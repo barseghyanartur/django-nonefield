@@ -8,7 +8,7 @@ try:
 except:
     readme = ''
 
-version = '0.2'
+version = '0.3'
 
 install_requires = [
 ]
@@ -26,10 +26,10 @@ setup(
     description="A None field for Django.",
     long_description=readme,
     classifiers=[
-        "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
         "Environment :: Web Environment",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
         "License :: OSI Approved :: GNU Lesser General Public License v2 or "
@@ -37,7 +37,7 @@ setup(
         "Framework :: Django",
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
     ],
     keywords='forms, django, none field, django none field',
     author='Artur Barseghyan',

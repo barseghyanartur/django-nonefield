@@ -1,11 +1,11 @@
 #https://www.djangoproject.com/download/1.8a1/tarball/
-Django>=1.8,<1.9
+Django>=2.1,<2.2
 
 Jinja2
 MarkupSafe
 #MySQL-python
 Sphinx
-django-debug-toolbar==0.11.0
+django-debug-toolbar>=1.6
 docutils
 ipdb
 ipython
