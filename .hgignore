@@ -6,6 +6,8 @@ syntax: regexp
 \.tox/
 \.travis\.yml~
 \.idea/
+\.pytest_cache/
+\.coverage
 
 ^MANIFEST\.in~
 ^tmp/

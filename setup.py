@@ -11,6 +11,7 @@ except:
 version = '0.3'
 
 install_requires = [
+    'django-nine>=0.1.13',
 ]
 
 try:
