@@ -264,7 +264,7 @@ LOGGING = {
         'django_log': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': PROJECT_DIR("../logs/django.log"),
+            'filename': PROJECT_DIR("../../logs/django.log"),
             'maxBytes': 1048576,
             'backupCount': 99,
             'formatter': 'verbose',
@@ -272,7 +272,7 @@ LOGGING = {
         'nonefield_log': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': PROJECT_DIR("../logs/nonefield.log"),
+            'filename': PROJECT_DIR("../../logs/nonefield.log"),
             'maxBytes': 1048576,
             'backupCount': 99,
             'formatter': 'verbose',
