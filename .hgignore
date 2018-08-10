@@ -17,7 +17,7 @@ syntax: regexp
 ^examples/logs/
 ^examples/media/cache/
 ^examples/static/
-^examples/example/local_settings.py
+^examples/simple/settings/local_settings\.py
 ^news-images/
 ^builddocs/
 ^builddocs.zip

@@ -22,5 +22,5 @@ tmp/
 /build/
 /dist/
 /src/django_nonefield.egg-info
-/examples/example/local_settings.py
+/examples/simple/settings/local_settings.py
 /src/nonefield/tests/
