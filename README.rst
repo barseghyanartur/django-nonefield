@@ -5,8 +5,8 @@ django-nonefield
 
 Prerequisites
 =============
-- Django 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11.
-- Python 2.7, 3.4, 3.5, 3.6
+- Django 1.8, 1.9, 1.10, 1.11, 2.0, 2.1.
+- Python 2.7, 3.5, 3.6, 3.7
 
 Installation
 ============

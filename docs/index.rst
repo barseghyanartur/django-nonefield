@@ -5,25 +5,25 @@ django-nonefield
 
 Prerequisites
 =============
-- Django 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11.
-- Python 2.7, 3.4, 3.5, 3.6
+- Django 1.8, 1.9, 1.10, 1.11, 2.0, 2.1.
+- Python 2.7, 3.5, 3.6, 3.7
 
 Installation
 ============
 
-(1) Install latest stable version from PyPI::
+(1) Install latest stable version from PyPI:
 
     .. code-block:: sh
 
         pip install django-nonefield
 
-    Or latest stable version from GitHub::
+    Or latest stable version from GitHub:
 
     .. code-block:: sh
 
         pip install https://github.com/barseghyanartur/django-nonefield/archive/stable.tar.gz
 
-    Or latest stable version from BitBucket::
+    Or latest stable version from BitBucket:
 
     .. code-block:: sh
 
@@ -73,17 +73,19 @@ Author
 ======
 Artur Barseghyan <artur.barseghyan@gmail.com>
 
-Documentation
-===============================================
+Project documentation
+=====================
 Contents:
 
 .. toctree::
    :maxdepth: 20
 
+   index
+   changelog
    nonefield
 
 Indices and tables
-===============================================
+==================
 
 * :ref:`genindex`
 * :ref:`modindex`

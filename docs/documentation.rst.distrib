@@ -1,15 +1,17 @@
 
-Documentation
-===============================================
+Project documentation
+=====================
 Contents:
 
 .. toctree::
    :maxdepth: 20
 
+   index
+   changelog
    nonefield
 
 Indices and tables
-===============================================
+==================
 
 * :ref:`genindex`
 * :ref:`modindex`
