@@ -21,7 +21,6 @@ sys.path.insert(0, os.path.abspath('../src'))
 sys.path.insert(0, os.path.abspath('../examples'))
 try:
     import nonefield
-    from simple import settings as example_settings
     version = nonefield.__version__
     project = nonefield.__title__
     copyright = nonefield.__copyright__
@@ -33,36 +32,121 @@ except Exception as e:
 # -- Django configuration ------------------------------------------------------
 from django.conf import settings
 
-if not settings.configured:
-    INSTALLED_APPS = list(example_settings.INSTALLED_APPS)
+try:
+    from simple import settings as docs_settings
+except Exception as err:
+    PROJECT_DIR = lambda base: os.path.abspath(
+        os.path.join(os.path.dirname(__file__), base).replace('\\', '/'))
+    gettext = lambda s: s
 
-    INSTALLED_APPS.append('nonefield')
+    # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+    BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-    if 'foo' in INSTALLED_APPS:
-        INSTALLED_APPS.remove('foo')
+    class DocsSettings(object):
+        """
+        """
 
-    settings.configure(
-        DATABASES=example_settings.DATABASES,
-        INSTALLED_APPS=INSTALLED_APPS,
-        MEDIA_ROOT=example_settings.MEDIA_ROOT,
-        MEDIA_URL=example_settings.MEDIA_URL,
-        MIDDLEWARE_CLASSES=example_settings.MIDDLEWARE_CLASSES,
-        ROOT_URLCONF=example_settings.ROOT_URLCONF,
-        SECRET_KEY=example_settings.SECRET_KEY,
-        SITE_ID=example_settings.SITE_ID,
-        STATICFILES_DIRS=example_settings.STATICFILES_DIRS,
-        STATICFILES_FINDERS=example_settings.STATICFILES_FINDERS,
-        STATIC_URL=example_settings.STATIC_URL,
-        STATIC_ROOT=example_settings.STATIC_ROOT,
-        TEMPLATE_CONTEXT_PROCESSORS=example_settings.TEMPLATE_CONTEXT_PROCESSORS,
-        TEMPLATE_DIRS=example_settings.TEMPLATE_DIRS,
-        TEMPLATE_LOADERS=example_settings.TEMPLATE_LOADERS,
-    )
+        INSTALLED_APPS = {
+            # Django core and contrib apps
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.sites',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+            'django.contrib.admin',
+            'django.contrib.sitemaps',
+
+            'foo',
+        }
+
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': PROJECT_DIR('../db/example.db'),
+            }
+        }
+
+        MEDIA_ROOT = PROJECT_DIR(os.path.join('..', 'media'))
+        MEDIA_URL = '/media/'
+        MIDDLEWARE_CLASSES = (
+            'django.contrib.sessions.middleware.SessionMiddleware',
+            # 'localeurl.middleware.LocaleURLMiddleware',
+            'django.middleware.common.CommonMiddleware',
+            'django.middleware.csrf.CsrfViewMiddleware',
+            'django.contrib.auth.middleware.AuthenticationMiddleware',
+            'django.contrib.messages.middleware.MessageMiddleware',
+            # Uncomment the next line for simple clickjacking protection:
+            # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        )
+        ROOT_URLCONF = 'urls'
+        SECRET_KEY = '97818c*w97Zi8a-m^1coRRrmurMI6+q5_kyn*)s@(*_Pk6q423'
+        SITE_ID = 1
+        STATICFILES_DIRS = (
+            PROJECT_DIR(os.path.join('..', 'media', 'static')),
+        )
+        STATICFILES_FINDERS = (
+            'django.contrib.staticfiles.finders.FileSystemFinder',
+            'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+            #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+        )
+        STATIC_URL = '/static/'
+        STATIC_ROOT = PROJECT_DIR(os.path.join('..', 'static'))
+
+        TEMPLATES = [
+            {
+                'BACKEND': 'django.template.backends.django.DjangoTemplates',
+                #'APP_DIRS': True,
+                'DIRS': [PROJECT_DIR('templates'),],
+                'OPTIONS': {
+                    'context_processors': [
+                        "django.contrib.auth.context_processors.auth",
+                        "django.core.context_processors.debug",
+                        "django.core.context_processors.i18n",
+                        "django.core.context_processors.media",
+                        "django.core.context_processors.static",
+                        "django.core.context_processors.tz",
+                        "django.contrib.messages.context_processors.messages",
+                        "django.core.context_processors.request",
+                    ],
+                    'loaders': [
+                        'django.template.loaders.filesystem.Loader',
+                        'django.template.loaders.app_directories.Loader',
+                        'django.template.loaders.eggs.Loader',
+                        'admin_tools.template_loaders.Loader',
+                    ],
+                    'debug': False,
+                }
+            },
+        ]
+
+    # END class ExampleSettings()
+
+    docs_settings = DocsSettings()
 
 # -- Django configuration ------------------------------------------------------
 from django.conf import settings
+
 if not settings.configured:
-    settings.configure()
+    INSTALLED_APPS = list(docs_settings.INSTALLED_APPS)
+
+    django_configuration = {
+        'DATABASES': docs_settings.DATABASES,
+        'INSTALLED_APPS': INSTALLED_APPS,
+        'MEDIA_ROOT': docs_settings.MEDIA_ROOT,
+        'MEDIA_URL': docs_settings.MEDIA_URL,
+        'MIDDLEWARE_CLASSES': docs_settings.MIDDLEWARE_CLASSES,
+        'ROOT_URLCONF': docs_settings.ROOT_URLCONF,
+        'SECRET_KEY': docs_settings.SECRET_KEY,
+        'SITE_ID': docs_settings.SITE_ID,
+        'STATICFILES_DIRS': docs_settings.STATICFILES_DIRS,
+        'STATICFILES_FINDERS': docs_settings.STATICFILES_FINDERS,
+        'STATIC_URL': docs_settings.STATIC_URL,
+        'STATIC_ROOT': docs_settings.STATIC_ROOT,
+        'TEMPLATES': docs_settings.TEMPLATES
+    }
+
+    settings.configure(**django_configuration)
 
 # -- General configuration -----------------------------------------------------
 
