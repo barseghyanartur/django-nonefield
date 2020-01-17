@@ -28,7 +28,7 @@ try:
 except Exception as e:
     version = '0.1'
     project = u'django-nonefield'
-    copyright = u'2013-2015, Artur Barseghyan <artur.barseghyan@gmail.com>'
+    copyright = u'2013-2020, Artur Barseghyan <artur.barseghyan@gmail.com>'
 
 # -- Django configuration ------------------------------------------------------
 from django.conf import settings
@@ -42,22 +42,22 @@ if not settings.configured:
         INSTALLED_APPS.remove('foo')
 
     settings.configure(
-        DATABASES = example_settings.DATABASES,
-        INSTALLED_APPS = INSTALLED_APPS,
-        MEDIA_ROOT = example_settings.MEDIA_ROOT,
-        MEDIA_URL = example_settings.MEDIA_URL,
-        MIDDLEWARE_CLASSES = example_settings.MIDDLEWARE_CLASSES,
-        ROOT_URLCONF = example_settings.ROOT_URLCONF,
-        SECRET_KEY = example_settings.SECRET_KEY,
-        SITE_ID = example_settings.SITE_ID,
-        STATICFILES_DIRS = example_settings.STATICFILES_DIRS,
-        STATICFILES_FINDERS = example_settings.STATICFILES_FINDERS,
-        STATIC_URL = example_settings.STATIC_URL,
-        STATIC_ROOT = example_settings.STATIC_ROOT,
-        TEMPLATE_CONTEXT_PROCESSORS = example_settings.TEMPLATE_CONTEXT_PROCESSORS,
-        TEMPLATE_DIRS = example_settings.TEMPLATE_DIRS,
-        TEMPLATE_LOADERS = example_settings.TEMPLATE_LOADERS,
-        )
+        DATABASES=example_settings.DATABASES,
+        INSTALLED_APPS=INSTALLED_APPS,
+        MEDIA_ROOT=example_settings.MEDIA_ROOT,
+        MEDIA_URL=example_settings.MEDIA_URL,
+        MIDDLEWARE_CLASSES=example_settings.MIDDLEWARE_CLASSES,
+        ROOT_URLCONF=example_settings.ROOT_URLCONF,
+        SECRET_KEY=example_settings.SECRET_KEY,
+        SITE_ID=example_settings.SITE_ID,
+        STATICFILES_DIRS=example_settings.STATICFILES_DIRS,
+        STATICFILES_FINDERS=example_settings.STATICFILES_FINDERS,
+        STATIC_URL=example_settings.STATIC_URL,
+        STATIC_ROOT=example_settings.STATIC_ROOT,
+        TEMPLATE_CONTEXT_PROCESSORS=example_settings.TEMPLATE_CONTEXT_PROCESSORS,
+        TEMPLATE_DIRS=example_settings.TEMPLATE_DIRS,
+        TEMPLATE_LOADERS=example_settings.TEMPLATE_LOADERS,
+    )
 
 # -- Django configuration ------------------------------------------------------
 from django.conf import settings
@@ -295,7 +295,7 @@ texinfo_documents = [
 epub_title = u'django-nonefield'
 epub_author = u'Artur Barseghyan <artur.barseghyan@gmail.com>'
 epub_publisher = u'Artur Barseghyan <artur.barseghyan@gmail.com>'
-epub_copyright = u'2014, Artur Barseghyan <artur.barseghyan@gmail.com>'
+epub_copyright = u'2013-2020, Artur Barseghyan <artur.barseghyan@gmail.com>'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
