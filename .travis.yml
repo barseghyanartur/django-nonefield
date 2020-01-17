@@ -1,0 +1,115 @@
+dist: xenial
+
+services:
+  - mysql
+  - postgresql
+
+language: python
+
+matrix:
+  fast_finish: true
+  include:
+  - env: TOX_ENV=py27-django111-sqlite
+    python: 2.7
+  - env: TOX_ENV=py27-django111-mysql
+    python: 2.7
+  - env: TOX_ENV=py27-django111-postgresql
+    python: 2.7
+
+  - env: TOX_ENV=py35-django111-sqlite
+    python: 3.5
+  - env: TOX_ENV=py35-django111-mysql
+    python: 3.5
+  - env: TOX_ENV=py35-django111-postgresql
+    python: 3.5
+
+
+  - env: TOX_ENV=py35-django20-sqlite
+    python: 3.5
+  - env: TOX_ENV=py35-django20-mysql
+    python: 3.5
+  - env: TOX_ENV=py35-django20-postgresql
+    python: 3.5
+
+
+  - env: TOX_ENV=py35-django21-sqlite
+    python: 3.5
+  - env: TOX_ENV=py35-django21-mysql
+    python: 3.5
+  - env: TOX_ENV=py35-django21-postgresql
+    python: 3.5
+
+  - env: TOX_ENV=py36-django111-sqlite
+    python: 3.6
+  - env: TOX_ENV=py36-django111-mysql
+    python: 3.6
+  - env: TOX_ENV=py36-django111-postgresql
+    python: 3.6
+
+
+  - env: TOX_ENV=py36-django20-sqlite
+    python: 3.6
+  - env: TOX_ENV=py36-django20-mysql
+    python: 3.6
+  - env: TOX_ENV=py36-django20-postgresql
+    python: 3.6
+
+  - env: TOX_ENV=py36-django21-sqlite
+    python: 3.6
+  - env: TOX_ENV=py36-django21-mysql
+    python: 3.6
+  - env: TOX_ENV=py36-django21-postgresql
+    python: 3.6
+
+  - env: TOX_ENV=py36-django22-sqlite
+    python: 3.6
+  - env: TOX_ENV=py36-django22-mysql
+    python: 3.6
+  - env: TOX_ENV=py36-django22-postgresql
+    python: 3.6
+
+  - env: TOX_ENV=py36-django30-sqlite
+    python: 3.6
+  - env: TOX_ENV=py36-django30-mysql
+    python: 3.6
+  - env: TOX_ENV=py36-django30-postgresql
+    python: 3.6
+
+  - env: TOX_ENV=py37-django22-sqlite
+    python: 3.7
+  - env: TOX_ENV=py37-django22-mysql
+    python: 3.7
+  - env: TOX_ENV=py37-django22-postgresql
+    python: 3.7
+
+  - env: TOX_ENV=py37-django30-sqlite
+    python: 3.7
+  - env: TOX_ENV=py37-django30-mysql
+    python: 3.7
+  - env: TOX_ENV=py37-django30-postgresql
+    python: 3.7
+
+  - env: TOX_ENV=py38-django22-sqlite
+    python: 3.8
+  - env: TOX_ENV=py38-django22-mysql
+    python: 3.8
+  - env: TOX_ENV=py38-django22-postgresql
+    python: 3.8
+
+  - env: TOX_ENV=py38-django30-sqlite
+    python: 3.8
+  - env: TOX_ENV=py38-django30-mysql
+    python: 3.8
+  - env: TOX_ENV=py38-django30-postgresql
+    python: 3.8
+
+install: pip install -r examples/requirements/test.txt
+
+before_script:
+  - sleep 1
+
+script: travis_retry tox -e $TOX_ENV
+
+after_success:
+  - pip install coveralls
+  - coveralls

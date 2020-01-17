@@ -1,16 +1,8 @@
-#https://www.djangoproject.com/download/1.8a1/tarball/
-Django>=1.8,<1.9
+-r common.txt
+-r test.txt
+-r style_checkers.txt
 
-Jinja2
-MarkupSafe
-#MySQL-python
-Sphinx
-django-debug-toolbar==0.11.0
-docutils
-ipdb
-ipython
-ordereddict>=1.1
-# Selenium shall always be upgraded
-selenium
-simple-timer>=0.2
-tox
+Django>=1.8,<1.9
+django-debug-toolbar==1.4
+djangorestframework==3.6.2
+sqlparse==0.1.9

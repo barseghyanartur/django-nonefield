@@ -3,14 +3,37 @@ django-nonefield
 ================
 ``django-nonefield`` is a None field for Django.
 
+.. image:: https://img.shields.io/pypi/v/django-nonefield.svg
+   :target: https://pypi.python.org/pypi/django-nonefield
+   :alt: PyPI Version
+
+.. image:: https://img.shields.io/pypi/pyversions/django-nonefield.svg
+    :target: https://pypi.python.org/pypi/django-nonefield/
+    :alt: Supported Python versions
+
+.. image:: https://img.shields.io/travis/barseghyanartur/django-nonefield/master.svg
+   :target: http://travis-ci.org/barseghyanartur/django-nonefield
+   :alt: Build Status
+
+.. image:: https://readthedocs.org/projects/django-nonefield/badge/?version=latest
+    :target: http://django-nonefield.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://img.shields.io/badge/license-GPL--2.0--only%20OR%20LGPL--2.1--or--later-blue.svg
+   :target: https://github.com/barseghyanartur/django-nonefield/#License
+   :alt: GPL-2.0-only OR LGPL-2.1-or-later
+
+.. image:: https://coveralls.io/repos/github/barseghyanartur/django-nonefield/badge.svg?branch=master&service=github
+    :target: https://coveralls.io/github/barseghyanartur/django-nonefield?branch=master
+    :alt: Coverage
+
 Prerequisites
 =============
-- Django 1.8, 1.9, 1.10, 1.11, 2.0, 2.1.
-- Python 2.7, 3.5, 3.6, 3.7
+- Django 1.8, 1.9, 1.10, 1.11, 2.0, 2.1, 2.2, 3.0.
+- Python 2.7, 3.5, 3.6, 3.7, 3.8
 
 Installation
 ============
-
 (1) Install latest stable version from PyPI:
 
     .. code-block:: sh

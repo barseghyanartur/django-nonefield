@@ -2,7 +2,6 @@
 -r test.txt
 -r style_checkers.txt
 
-Django>=2.0,<2.1
+Django>=2.2,<2.3
 django-debug-toolbar>=1.6
-djangorestframework==3.7.7
-sqlparse>=0.2.2
+djangorestframework==3.9.2

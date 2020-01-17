@@ -1,6 +1,6 @@
 [run]
 omit =
-    src/nonefield/south_migrations/*
+    src/nonefield/migrations/*
     src/nonefield/tests/*
     example/simple/settings/*
     example/simple/wsgi.py
