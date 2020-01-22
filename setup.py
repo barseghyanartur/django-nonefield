@@ -8,7 +8,7 @@ try:
 except:
     readme = ''
 
-version = '0.3'
+version = '0.4'
 
 install_requires = [
     'django-nine>=0.1.13',

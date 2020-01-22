@@ -15,6 +15,14 @@ are used for versioning (schema follows below):
   0.3.4 to 0.4).
 - All backwards incompatible changes are mentioned in this document.
 
+0.4
+---
+2020-01-23 (not yet released)
+
+- Added Django REST Framework contrib.
+- Tested against Django 2.2 and 3.0.
+- Tested against Python 3.8.
+
 0.3
 ---
 2018-08-11
