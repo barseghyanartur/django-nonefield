@@ -1,19 +1,27 @@
 from rest_framework.viewsets import ModelViewSet
 
-from .models import Foo
-from .serializers import FooSerializer
-from .data import data
+from .models import Foo, Bar
+from .serializers import FooSerializer, BarSerializer
 
-__all__ = ('FooViewSet',)
+__all__ = (
+    'FooViewSet',
+    'BarViewSet',
+)
 
 
 class FooViewSet(ModelViewSet):
 
     serializer_class = FooSerializer
-    queryset = [_d for _d in data.values()]
+    queryset = Foo.objects.all()
+
+
+class BarViewSet(ModelViewSet):
+
+    serializer_class = BarSerializer
+    queryset = Bar.objects.all()
 
     def get_object(self):
         try:
-            return self.queryset[int(self.kwargs.get('pk'))]
+            return Bar.objects.get(pk=int(self.kwargs.get('pk')))
         except IndexError:
             pass

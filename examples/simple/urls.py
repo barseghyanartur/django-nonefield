@@ -10,7 +10,7 @@ from rest_framework import VERSION
 
 from nine import versions
 
-from foo.viewsets import FooViewSet
+from foo.viewsets import FooViewSet, BarViewSet
 
 admin.autodiscover()
 
@@ -40,7 +40,6 @@ __copyright__ = '2014-2019 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = (
     'urlpatterns',
-    'fobi_router',
 )
 
 DRF_VERSION = [int(_v) for _v in VERSION.split('.')]
@@ -48,12 +47,16 @@ basename = 'basename'
 if DRF_VERSION[:2] < [3, 10]:
     basename = 'base_name'
 
-router_kwargs = {basename: 'fooapi'}
-
 foo_router = DefaultRouter()
 foo_router.register(
     r'fooapi',
     FooViewSet,
-    **router_kwargs
+    **{basename: 'fooapi'}
 )
-urlpatterns = foo_router.urls
+bar_router = DefaultRouter()
+bar_router.register(
+    r'barapi',
+    BarViewSet,
+    **{basename: 'barapi'}
+)
+urlpatterns = foo_router.urls + bar_router.urls
