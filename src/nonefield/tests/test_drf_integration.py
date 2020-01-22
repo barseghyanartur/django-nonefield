@@ -1,6 +1,6 @@
 from rest_framework import status
 from rest_framework.reverse import reverse
-from rest_framework.test import APITestCase, APILiveServerTestCase
+from rest_framework.test import APILiveServerTestCase
 import factories
 from foo.models import Bar
 
@@ -101,7 +101,7 @@ class NoneFieldDRFIntegrationTestCase(APILiveServerTestCase):
                         "pass itself eat along reason media. Single garden "
                         "expect deal picture degree nor security.",
                 "context_text": "Haha",
-                "url": f"http://testserver/fooapi/{self.foo.pk}/",
+                "url": "http://testserver/fooapi/{}/".format(self.foo.pk),
             },
             format='json'
         )
@@ -116,7 +116,7 @@ class NoneFieldDRFIntegrationTestCase(APILiveServerTestCase):
                         "pass itself eat along reason media. Single garden "
                         "expect deal picture degree nor security.",
                 "context_text": "",
-                "url": f"http://testserver/fooapi/{self.foo.pk}/",
+                "url": "http://testserver/fooapi/{}/".format(self.foo.pk),
             }
         )
 
@@ -175,7 +175,7 @@ class NoneFieldDRFIntegrationTestCase(APILiveServerTestCase):
                         "pass itself eat along reason media. Single garden "
                         "expect deal picture degree nor security.",
                 "context_text": "Haha",
-                "url": f"http://testserver/barapi/{self.bar_id}/",
+                "url": "http://testserver/barapi/{}/".format(self.bar_id),
             },
             format='json'
         )
@@ -190,6 +190,6 @@ class NoneFieldDRFIntegrationTestCase(APILiveServerTestCase):
                         "pass itself eat along reason media. Single garden "
                         "expect deal picture degree nor security.",
                 "context_text": getattr(self.bar, "context_text", ""),
-                "url": f"http://testserver/barapi/{self.bar_id}/",
+                "url": "http://testserver/barapi/{}/".format(self.bar_id),
             }
         )
