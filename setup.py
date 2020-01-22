@@ -31,6 +31,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "Environment :: Web Environment",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
         "License :: OSI Approved :: GNU Lesser General Public License v2 or "
@@ -44,6 +45,13 @@ setup(
     author='Artur Barseghyan',
     author_email='artur.barseghyan@gmail.com',
     url='https://github.com/barseghyanartur/django-nonefield/',
+    project_urls={
+        "Bug Tracker": "https://github.com/barseghyanartur/django-nonefield/",
+        "Documentation": "https://django-nonefield.readthedocs.io/",
+        "Source Code": "https://github.com/barseghyanartur/django-nonefield/",
+        "Changelog": "https://django-nonefield.readthedocs.io/"
+                     "en/latest/changelog.html",
+    },
     package_dir={'': 'src'},
     packages=find_packages(where='./src'),
     license='GPL 2.0/LGPL 2.1',

@@ -22,6 +22,10 @@ class NoneField(Field):
         self.allow_blank = True
         self.trim_whitespace = kwargs.pop('trim_whitespace', True)
         self.raw_data = kwargs.pop('raw_data', {})
+        kwargs.update({
+            'required': False,
+            'read_only': True,
+        })
         super(NoneField, self).__init__(**kwargs)
 
     def run_validation(self, data=empty):
