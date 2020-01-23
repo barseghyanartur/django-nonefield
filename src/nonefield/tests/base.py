@@ -28,10 +28,10 @@ def log_info(func):
 
         result = func(self, *args, **kwargs)
 
-        LOGGER.debug('\n{0}'.format(func.__name__))
+        LOGGER.debug('\n %s', func.__name__)
         LOGGER.debug('============================')
         if func.__doc__:
-            LOGGER.debug('""" {0} """'.format(func.__doc__.strip()))
+            LOGGER.debug('""" %s """', func.__doc__.strip())
         LOGGER.debug('----------------------------')
         if result is not None:
             LOGGER.debug(result)
@@ -48,6 +48,6 @@ def optional_skip(func):
     """Simply skips the test."""
     def inner(self, *args, **kwargs):
         if OPTIONAL_SKIP:
-            return
+            return None
         return func(self, *args, **kwargs)
     return inner
