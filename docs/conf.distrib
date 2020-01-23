@@ -69,7 +69,7 @@ except Exception as err:
 
         MEDIA_ROOT = PROJECT_DIR(os.path.join('..', 'media'))
         MEDIA_URL = '/media/'
-        MIDDLEWARE_CLASSES = (
+        MIDDLEWARE = (
             'django.contrib.sessions.middleware.SessionMiddleware',
             # 'localeurl.middleware.LocaleURLMiddleware',
             'django.middleware.common.CommonMiddleware',
@@ -135,7 +135,7 @@ if not settings.configured:
         'INSTALLED_APPS': INSTALLED_APPS,
         'MEDIA_ROOT': docs_settings.MEDIA_ROOT,
         'MEDIA_URL': docs_settings.MEDIA_URL,
-        'MIDDLEWARE_CLASSES': docs_settings.MIDDLEWARE_CLASSES,
+        'MIDDLEWARE': docs_settings.MIDDLEWARE,
         'ROOT_URLCONF': docs_settings.ROOT_URLCONF,
         'SECRET_KEY': docs_settings.SECRET_KEY,
         'SITE_ID': docs_settings.SITE_ID,
