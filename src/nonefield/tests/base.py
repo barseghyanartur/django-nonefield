@@ -40,6 +40,7 @@ def log_info(func):
         return result
     return inner
 
+
 OPTIONAL_SKIP = False
 
 
