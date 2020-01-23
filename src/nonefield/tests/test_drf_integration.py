@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework.test import APILiveServerTestCase
-from nine.versions import DJANGO_GTE_2_2
+from nine.versions import DJANGO_GTE_2_1
 import factories
 from foo.models import Bar
 
@@ -116,7 +116,7 @@ class NoneFieldDRFIntegrationTestCase(APILiveServerTestCase):
                 "text": "Wide explain force ability manage car return. Camera "
                         "pass itself eat along reason media. Single garden "
                         "expect deal picture degree nor security.",
-                "context_text": "Haha" if DJANGO_GTE_2_2 else "",
+                "context_text": "Haha" if DJANGO_GTE_2_1 else "",
                 "url": "http://testserver/fooapi/{}/".format(self.foo.pk),
             }
         )
@@ -190,7 +190,7 @@ class NoneFieldDRFIntegrationTestCase(APILiveServerTestCase):
                 "text": "Wide explain force ability manage car return. Camera "
                         "pass itself eat along reason media. Single garden "
                         "expect deal picture degree nor security.",
-                "context_text": "Haha" if DJANGO_GTE_2_2 else "",
+                "context_text": "Haha" if DJANGO_GTE_2_1 else "",
                 "url": "http://testserver/barapi/{}/".format(self.bar_id),
             }
         )
