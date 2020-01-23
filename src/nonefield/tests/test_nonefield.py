@@ -2,6 +2,7 @@ import unittest
 
 from django import forms
 from django.test import RequestFactory, TestCase
+from nine.versions import DJANGO_GTE_1_11
 
 from ..fields import NoneField
 from .base import log_info
@@ -51,6 +52,26 @@ class NoneFieldTest(TestCase):
         )
 
         self.assertTrue(form.is_valid())
+        form_as_p = form.as_p()
+
+        expected_output = """
+        <p>
+        <label for="id_name">Name:</label>
+        <input type="text" name="name" value="John Doe" required id="id_name">
+        </p>
+        <p>
+        <label for="id_static_text">Static text:</label>
+        Lorem ipsum
+        </p>
+        """
+
+        if not DJANGO_GTE_1_11:
+            expected_output = expected_output.replace('required', '')
+
+        self.assertHTMLEqual(
+            form_as_p,
+            expected_output
+        )
 
         self.assertEqual("John Doe", form.cleaned_data['name'])
         self.assertEqual(INITIAL_NONEFIELD_VALUE,

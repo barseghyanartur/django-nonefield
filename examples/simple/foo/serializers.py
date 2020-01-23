@@ -51,11 +51,9 @@ class BarSerializer(serializers.Serializer):
         return self.id
 
     def create(self, validated_data):
-        print(validated_data)
         return Bar(id=None, **validated_data)
 
     def update(self, instance, validated_data):
-        # import ipdb; ipdb.set_trace()
         for field, value in validated_data.items():
             setattr(instance, field, value)
         return instance

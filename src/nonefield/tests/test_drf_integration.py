@@ -1,3 +1,4 @@
+import unittest
 from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework.test import APILiveServerTestCase
@@ -7,8 +8,8 @@ from foo.models import Bar
 
 __title__ = 'nonefield.tests.test_drf_integration'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = '2014-2019 Artur Barseghyan'
-__license__ = 'GPL 2.0/LGPL 2.1'
+__copyright__ = '2014-2020 Artur Barseghyan'
+__license__ = 'GPL-2.0-only OR LGPL-2.1-or-later'
 __all__ = (
     'NoneFieldDRFIntegrationTestCase',
 )
@@ -194,3 +195,7 @@ class NoneFieldDRFIntegrationTestCase(APILiveServerTestCase):
                 "url": "http://testserver/barapi/{}/".format(self.bar_id),
             }
         )
+
+
+if __name__ == '__main__':
+    unittest.main()

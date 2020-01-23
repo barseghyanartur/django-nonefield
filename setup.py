@@ -41,7 +41,7 @@ setup(
         "Operating System :: OS Independent",
         "Development Status :: 4 - Beta",
     ],
-    keywords='forms, django, none field, django none field',
+    keywords='forms, django, none field, django rest framework',
     author='Artur Barseghyan',
     author_email='artur.barseghyan@gmail.com',
     url='https://github.com/barseghyanartur/django-nonefield/',
@@ -54,6 +54,6 @@ setup(
     },
     package_dir={'': 'src'},
     packages=find_packages(where='./src'),
-    license='GPL 2.0/LGPL 2.1',
+    license='GPL-2.0-only OR LGPL-2.1-or-later',
     install_requires=install_requires,
 )

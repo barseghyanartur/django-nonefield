@@ -17,7 +17,7 @@ are used for versioning (schema follows below):
 
 0.4
 ---
-2020-01-23 (not yet released)
+2020-01-23
 
 - Added Django REST Framework contrib.
 - Tested against Django 2.2 and 3.0.

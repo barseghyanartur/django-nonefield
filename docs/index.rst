@@ -3,6 +3,11 @@ django-nonefield
 ================
 ``django-nonefield`` is a None field for Django.
 
+A typical use case: allow presentational (non-input, non-field) form
+elements (text, image, embed video, etc). This could be very useful if your
+forms are dynamic (as in form-builders/generators). Django REST Framework
+integration is implemented as well.
+
 .. image:: https://img.shields.io/pypi/v/django-nonefield.svg
    :target: https://pypi.python.org/pypi/django-nonefield
    :alt: PyPI Version
@@ -29,7 +34,7 @@ django-nonefield
 
 Prerequisites
 =============
-- Django 1.8, 1.9, 1.10, 1.11, 2.0, 2.1, 2.2, 3.0.
+- Django 1.8, 1.11, 2.0, 2.1, 2.2, 3.0.
 - Python 2.7, 3.5, 3.6, 3.7, 3.8
 
 Installation
@@ -68,6 +73,8 @@ Usage
 =====
 forms.py
 --------
+In forms you could use it as follows:
+
 .. code-block:: python
 
     from django import forms
@@ -78,15 +85,43 @@ forms.py
         name = forms.CharField(max_length=255)
         some_text = NoneField(initial='Lorem ipsum')
 
+See `this snippet <https://gist.github.com/barseghyanartur/c6e0123dd961fbac1b39>`__
+as an example of how to allow to use paragraphs in the `django-forms-builder`.
+
+serializers.py
+--------------
+You can also use it in Django REST Framework.
+
+.. code-block:: python
+
+    from rest_framework import serializers
+    from nonefield.contrib.drf_integration.fields import NoneField
+
+
+    class ContentTextField(NoneField):
+        """Content text field."""
+
+    class BarSerializer(serializers.Serializer):
+
+        title = serializers.CharField(max_length=256)
+        text = serializers.CharField()
+        context_text = ContentTextField(label='', default='Haha')
+
+See `how it's used in django-fobi
+<https://github.com/barseghyanartur/django-fobi/blob/master/src/fobi/contrib/plugins/form_elements/content/content_text/fobi_form_elements.py>`__
+to allow to use content/presentational elements (text, image, embed video, etc.)
+in the Django REST Framework schema.
+
 Examples
 ========
-- `example 1 <https://gist.github.com/barseghyanartur/c6e0123dd961fbac1b39>`_
-- `example 2
+- `django-forms-builder example <https://gist.github.com/barseghyanartur/c6e0123dd961fbac1b39>`_
+- `django-fobi form elements example <https://github.com/barseghyanartur/django-fobi/tree/master/src/fobi/contrib/plugins/form_elements/content>`__
+- `django-fobi DRF integration example
   <https://github.com/barseghyanartur/django-fobi/blob/master/src/fobi/contrib/plugins/form_elements/content/content_text/fobi_form_elements.py>`_
 
 License
 =======
-GPL 2.0/LGPL 2.1
+GPL-2.0-only OR LGPL-2.1-or-later
 
 Support
 =======

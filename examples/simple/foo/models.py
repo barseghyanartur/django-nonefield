@@ -1,7 +1,13 @@
 from copy import deepcopy
 from django.db import models
 from faker import Faker
-from django.utils.functional import keep_lazy
+
+from nine.versions import DJANGO_GTE_1_11
+
+if DJANGO_GTE_1_11:
+    from django.utils.functional import keep_lazy
+else:
+    from .compat import keep_lazy
 
 __all__ = (
     'Foo',

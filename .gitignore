@@ -28,4 +28,3 @@ tmp/
 /dist/
 /src/django_nonefield.egg-info
 /examples/simple/settings/local_settings.py
-/src/django_nonefield/tests/test_drf_integration.py

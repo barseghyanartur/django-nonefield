@@ -1,14 +1,13 @@
 dist: xenial
 
-services:
-  - mysql
-  - postgresql
-
 language: python
 
 matrix:
-  fast_finish: true
+  fast_finish: false
   include:
+  - env: TOX_ENV=py27-django18
+    python: 2.7
+
   - env: TOX_ENV=py27-django111
     python: 2.7
 

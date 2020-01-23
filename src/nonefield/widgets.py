@@ -3,9 +3,11 @@ from django.utils.safestring import mark_safe
 
 __title__ = 'nonefield.widgets'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = '2013-2018 Artur Barseghyan'
-__license__ = 'GPL 2.0/LGPL 2.1'
-__all__ = ('NoneWidget',)
+__copyright__ = '2013-2020 Artur Barseghyan'
+__license__ = 'GPL-2.0-only OR LGPL-2.1-or-later'
+__all__ = (
+    'NoneWidget',
+)
 
 
 class NoneWidget(Widget):
